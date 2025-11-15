@@ -33,7 +33,7 @@ function toggleInfo(elementId) {
 
 
 // версия
-const PROJECT_VERSION = "0.3.0-alpha";
+const PROJECT_VERSION = "0.3.1-alpha";
 document.addEventListener('DOMContentLoaded', function() {
     const versionElement = document.getElementById('project-version');
     if (versionElement) {
