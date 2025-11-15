@@ -30,3 +30,13 @@ function toggleInfo(elementId) {
         element.style.display = element.style.display === 'none' ? 'block' : 'none';
     }
 }
+
+
+// версия
+const PROJECT_VERSION = "0.2.2-alpha";
+document.addEventListener('DOMContentLoaded', function() {
+    const versionElement = document.getElementById('project-version');
+    if (versionElement) {
+        versionElement.textContent = `Версия: ${PROJECT_VERSION}`;
+    }
+});

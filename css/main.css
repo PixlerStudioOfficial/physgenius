@@ -118,3 +118,21 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Стили для GitHub ссылки */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+    background: transparent; /* Изначально прозрачный фон */
+}
+
+.github-link:hover {
+    color: #3498db;
+    background: rgba(255, 255, 255, 0.1); /* Фон появляется при наведении */
+}
