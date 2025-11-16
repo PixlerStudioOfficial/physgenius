@@ -1,5 +1,3 @@
-// js/components.js - Компоненты для сайта PhysGenius
-
 class PhysComponents {
     static header() {
         const currentPath = window.location.pathname;
@@ -18,6 +16,9 @@ class PhysComponents {
                     <a class="${isActive('/home/electrical_phen') ? 'nav-btn active' : 'nav-btn'}" href="/home/electrical_phen">Электрические явления</a>
                     <a class="${isActive('/home/optics') ? 'nav-btn active' : 'nav-btn'}" href="/home/optics">Оптика</a>
                     <a class="${isActive('/home/quantum_phys') ? 'nav-btn active' : 'nav-btn'}" href="/home/quantum_phys">Квантовая физика</a>
+                    <button class="theme-toggle" id="theme-toggle" title="Сменить тему">
+                        🌙
+                    </button>
                 </nav>
             </header>
         `;

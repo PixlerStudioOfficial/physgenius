@@ -1,4 +1,4 @@
-const PROJECT_VERSION = "v0.4.0-alpha";
+const PROJECT_VERSION = "v0.5.0-alpha";
 
 function updateVersion() {
     const versionElement = document.getElementById('project-version');
