@@ -151,8 +151,8 @@ footer {
     width: 100%;
 }
 
-/* Стили для GitHub ссылки */
-.github-link {
+/* Стили для ссылок */
+.footer-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -164,7 +164,7 @@ footer {
     background: transparent;
 }
 
-.github-link:hover {
+.footer-link:hover {
     color: var(--accent-color);
     background: rgba(255, 255, 255, 0.1);
 }
