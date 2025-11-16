@@ -46,7 +46,7 @@ class PhysComponents {
                     target="_blank" 
                     class="footer-link">
                     <img src="/img/googledrive.png" alt="Google Drive" class="google-drive-icon" width="20" height="18">
-                    Яндекс Диск
+                    Google Drive
                 </a>
             </footer>
         `;
