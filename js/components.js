@@ -15,7 +15,7 @@ class PhysComponents {
                     <a class="${isActive('/home/thermal_phen') ? 'nav-btn active' : 'nav-btn'}" href="/home/thermal_phen">Тепловые явления</a>
                     <a class="${isActive('/home/electrical_phen') ? 'nav-btn active' : 'nav-btn'}" href="/home/electrical_phen">Электрические явления</a>
                     <a class="${isActive('/home/optics') ? 'nav-btn active' : 'nav-btn'}" href="/home/optics">Оптика</a>
-                    <a class="${isActive('/home/quantum_phys') ? 'nav-btn active' : 'nav-btn'}" href="/home/quantum_phys">Квантовая физика</a>
+                    <a class="${isActive('/home/nuclear_phys') ? 'nav-btn active' : 'nav-btn'}" href="/home/nuclear_phys">Ядерная физика</a>
                     <button class="theme-toggle" id="theme-toggle" title="Сменить тему">
                         🌙
                     </button>
@@ -57,7 +57,7 @@ class PhysComponents {
             '/home/thermal_phen': 'Тепловые явления', 
             '/home/electrical_phen': 'Электрические явления',
             '/home/optics': 'Оптика',
-            '/home/quantum_phys': 'Квантовая физика'
+            '/home/nuclear_phys': 'Ядерная физика'
         };
         
         const normalize = (path) => path.replace(/\/$/, '').replace(/\/index\.html$/, '') || '/';
