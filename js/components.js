@@ -61,7 +61,6 @@ class PhysComponents {
         
         const normalize = (path) => path.replace(/\/$/, '').replace(/\/index\.html$/, '') || '/';
         const normalizedPath = normalize(currentPath);
-        
         return titleMap[normalizedPath] || 'PhysGenius';
     }
     

@@ -1,4 +1,4 @@
-const PROJECT_VERSION = "v0.3.2-alpha";
+const PROJECT_VERSION = "v0.4.0-alpha";
 
 function updateVersion() {
     const versionElement = document.getElementById('project-version');
@@ -7,4 +7,10 @@ function updateVersion() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', updateVersion);
+window.addEventListener('load', function() {
+    updateVersion();
+});
+
+setTimeout(function() {
+    updateVersion();
+}, 100);
