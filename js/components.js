@@ -7,6 +7,31 @@ class PhysComponents {
             return normalize(currentPath) === normalize(pagePath);
         };
 
+        // Проверяем, находимся ли мы в разделе механики (включая подразделы)
+        const isMechanicsSection = currentPath.startsWith('/home/mechanics');
+
+        // Если мы в подразделе механики (но не на главной странице механики)
+        if (isMechanicsSection && currentPath !== '/home/mechanics' && currentPath !== '/home/mechanics/') {
+            return `
+                <header>
+                    <nav>
+                        <a class="mp-nav-btn" href="/">Главная</a>
+                        <a class="nav-btn" href="/home/mechanics">Механика</a>
+                        <div class="subsections">
+                            <a class="${isActive('/home/mechanics/kinematics') ? 'nav-btn active' : 'nav-btn'}" href="/home/mechanics/kinematics">Кинематика</a>
+                            <a class="${isActive('/home/mechanics/dynamics') ? 'nav-btn active' : 'nav-btn'}" href="/home/mechanics/dynamics">Динамика</a>
+                            <a class="${isActive('/home/mechanics/conservation_laws') ? 'nav-btn active' : 'nav-btn'}" href="/home/mechanics/conservation_laws">Законы сохранения</a>
+                            <a class="${isActive('/home/mechanics/statics') ? 'nav-btn active' : 'nav-btn'}" href="/home/mechanics/statics">Статика</a>
+                        </div>
+                        <button class="theme-toggle" id="theme-toggle" title="Сменить тему">
+                            🌙
+                        </button>
+                    </nav>
+                </header>
+            `;
+        }
+
+        // Обычная шапка для всех остальных страниц
         return `
             <header>
                 <nav>
@@ -66,6 +91,10 @@ class PhysComponents {
         const titleMap = {
             '/': 'Главная',
             '/home/mechanics': 'Механика',
+            '/home/mechanics/kinematics': 'Кинематика',
+            '/home/mechanics/dynamics': 'Динамика',
+            '/home/mechanics/conservation_laws': 'Законы сохранения',
+            '/home/mechanics/statics': 'Статика и гидростатика',
             '/home/thermal_phen': 'Тепловые явления', 
             '/home/electrical_phen': 'Электрические явления',
             '/home/optics': 'Оптика',
