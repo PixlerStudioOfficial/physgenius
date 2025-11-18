@@ -275,3 +275,13 @@ footer {
     color: var(--text-secondary);
     line-height: 1.5;
 }
+
+
+/* Стили для активного основного раздела (когда мы в подразделе) */
+.nav-btn.section-active {
+    background: rgba(52, 152, 219, 0.2) !important;
+}
+
+.nav-btn.section-active:hover {
+    background: rgba(220, 241, 255, 0.2) !important;
+}

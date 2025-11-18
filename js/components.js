@@ -7,8 +7,9 @@ class PhysComponents {
             return normalize(currentPath) === normalize(pagePath);
         };
 
-        // Проверяем, находимся ли мы в разделе механики (включая подразделы)
         const isMechanicsSection = currentPath.startsWith('/home/mechanics');
+        const isThermalSection = currentPath.startsWith('/home/thermal_phen');
+
 
         // Если мы в подразделе механики (но не на главной странице механики)
         if (isMechanicsSection && currentPath !== '/home/mechanics' && currentPath !== '/home/mechanics/') {
@@ -16,7 +17,7 @@ class PhysComponents {
                 <header>
                     <nav>
                         <a class="mp-nav-btn" href="/">Главная</a>
-                        <a class="nav-btn" href="/home/mechanics">Механика</a>
+                        <a class="nav-btn section-active" href="/home/mechanics">Механика</a>
                         <div class="subsections">
                             <a class="${isActive('/home/mechanics/kinematics') ? 'nav-btn active' : 'nav-btn'}" href="/home/mechanics/kinematics">Кинематика</a>
                             <a class="${isActive('/home/mechanics/dynamics') ? 'nav-btn active' : 'nav-btn'}" href="/home/mechanics/dynamics">Динамика</a>
@@ -30,6 +31,25 @@ class PhysComponents {
                 </header>
             `;
         }
+
+        if (isThermalSection && currentPath !== '/home/thermal_phen' && currentPath !== '/home/thermal_phen/') {
+            return `
+                <header>
+                    <nav>
+                        <a class="mp-nav-btn" href="/">Главная</a>
+                        <a class="nav-btn section-active" href="/home/thermal_phen">Тепловые явления</a>
+                        <div class="subsections">
+                            <a class="${isActive('/home/thermal_phen/molecular_kinetic') ? 'nav-btn active' : 'nav-btn'}" href="/home/thermal_phen/molecular_kinetic">Молекулярно-кинетическая теория</a>
+                            <a class="${isActive('/home/thermal_phen/heat_transfer') ? 'nav-btn active' : 'nav-btn'}" href="/home/thermal_phen/heat_transfer">Теплопередача</a>
+                        </div>
+                        <button class="theme-toggle" id="theme-toggle" title="Сменить тему">
+                            🌙
+                        </button>
+                    </nav>
+                </header>
+            `;
+        }
+
 
         // Обычная шапка для всех остальных страниц
         return `
@@ -96,6 +116,8 @@ class PhysComponents {
             '/home/mechanics/conservation_laws': 'Законы сохранения',
             '/home/mechanics/statics': 'Статика и гидростатика',
             '/home/thermal_phen': 'Тепловые явления', 
+            '/home/thermal_phen/molecular_kinetic': 'Молекулярно-кинетическая теория',
+            '/home/thermal_phen/heat_transfer': 'Теплопередача',
             '/home/electrical_phen': 'Электрические явления',
             '/home/optics': 'Оптика',
             '/home/nuclear_phys': 'Ядерная физика'
