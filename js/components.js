@@ -9,6 +9,7 @@ class PhysComponents {
 
         const isMechanicsSection = currentPath.startsWith('/home/mechanics');
         const isThermalSection = currentPath.startsWith('/home/thermal_phen');
+        const isElectricalSection = currentPath.startsWith('/home/electrical_phen');
 
 
         // Если мы в подразделе механики (но не на главной странице механики)
@@ -49,6 +50,28 @@ class PhysComponents {
                 </header>
             `;
         }
+
+        if (isElectricalSection && currentPath !== '/home/electrical_phen' && currentPath !== '/home/electrical_phen/') {
+            return `
+                <header>
+                    <nav>
+                        <a class="mp-nav-btn" href="/">Главная</a>
+                        <a class="nav-btn section-active" href="/home/electrical_phen">Электрические явления</a>
+                        <div class="subsections">
+                            <a class="${isActive('/home/electrical_phen/electrostatics') ? 'nav-btn active' : 'nav-btn'}" href="/home/electrical_phen/electrostatics">Электростатика</a>
+                            <a class="${isActive('/home/electrical_phen/electric_curr') ? 'nav-btn active' : 'nav-btn'}" href="/home/electrical_phen/electric_curr">Электрический ток</a>
+                            <a class="${isActive('/home/electrical_phen/electric_circ') ? 'nav-btn active' : 'nav-btn'}" href="/home/electrical_phen/electric_circ">Электрическая цепь</a>
+                            <a class="${isActive('/home/electrical_phen/magnetic_phen') ? 'nav-btn active' : 'nav-btn'}" href="/home/electrical_phen/magnetic_phen">Магнитные явления</a>
+                        </div>
+                        <button class="theme-toggle" id="theme-toggle" title="Сменить тему">
+                            🌙
+                        </button>
+                    </nav>
+                </header>
+            `;
+        }
+
+        
 
 
         // Обычная шапка для всех остальных страниц
@@ -119,6 +142,10 @@ class PhysComponents {
             '/home/thermal_phen/molecular_kinetic': 'Молекулярно-кинетическая теория',
             '/home/thermal_phen/heat_transfer': 'Теплопередача',
             '/home/electrical_phen': 'Электрические явления',
+            '/home/electrical_phen/electrostatics': 'Электростатика',
+            '/home/electrical_phen/electric_curr': 'Электрический ток',
+            '/home/electrical_phen/electric_circ': 'Электрические цепи',
+            '/home/electrical_phen/magnetic_phenomena': 'Магнитные явления',
             '/home/optics': 'Оптика',
             '/home/nuclear_phys': 'Ядерная физика'
         };
