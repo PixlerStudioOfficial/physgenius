@@ -11,8 +11,6 @@ class PhysComponents {
         const isThermalSection = currentPath.startsWith('/home/thermal_phen');
         const isElectricalSection = currentPath.startsWith('/home/electrical_phen');
 
-
-        // Если мы в подразделе механики (но не на главной странице механики)
         if (isMechanicsSection && currentPath !== '/home/mechanics' && currentPath !== '/home/mechanics/') {
             return `
                 <header>
@@ -72,9 +70,6 @@ class PhysComponents {
         }
 
         
-
-
-        // Обычная шапка для всех остальных страниц
         return `
             <header>
                 <nav>

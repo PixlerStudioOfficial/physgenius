@@ -285,3 +285,197 @@ footer {
 .nav-btn.section-active:hover {
     background: rgba(220, 241, 255, 0.2) !important;
 }
+
+
+
+
+
+
+
+
+
+
+/* Стили для кинематики */
+.kinematics-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.kinematics-content h1 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.kinematics-content h2 {
+    color: var(--accent-color);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    font-size: 1.4rem;
+}
+
+.kinematics-content h3 {
+    color: var(--text-primary);
+    margin: 1.5rem 0 0.8rem;
+    font-size: 1.1rem;
+}
+
+.kinematics-content section {
+    margin-bottom: 2.5rem;
+}
+
+.kinematics-content p {
+    margin: 0.8rem 0;
+    line-height: 1.6;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+.kinematics-content ul {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+.kinematics-content li {
+    margin: 0.4rem 0;
+    line-height: 1.5;
+}
+
+/* ФОРМУЛЫ ВСТРОЕННЫЕ В ТЕКСТ */
+/* Инлайн формулы (в тексте) */
+.MathJax {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+/* Формулы в параграфах */
+p .MathJax,
+li .MathJax,
+span .MathJax {
+    font-size: 1.1em !important;
+    display: inline !important;
+    margin: 0 0.2rem !important;
+    vertical-align: middle !important;
+}
+
+/* Блоковые формулы теперь слева */
+.kinematics-content p:has(> .MathJax),
+.kinematics-content li:has(> .MathJax) {
+    text-align: left;
+}
+
+/* Для displayMath ($$ формулы) */
+.MJXc-display {
+    text-align: left !important;
+    margin: 0.8rem 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+/* Формулы в отдельном параграфе */
+p:has(> .MathJax) {
+    margin: 1rem 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* Особые блоки */
+.note, .warning, .tip {
+    padding: 1rem;
+    margin: 1.2rem 0;
+    border-radius: 6px;
+    border-left: 4px solid;
+    text-align: left;
+}
+
+.note {
+    background: rgba(52, 152, 219, 0.1);
+    border-color: var(--accent-color);
+}
+
+.warning {
+    background: rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+}
+
+.tip {
+    background: rgba(46, 204, 113, 0.1);
+    border-color: #2ecc71;
+}
+
+/* Итоговый раздел */
+.summary {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.summary h2 {
+    border: none;
+    text-align: center;
+}
+
+.summary h3 {
+    color: var(--accent-dark);
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.summary p {
+    text-align: left;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .kinematics-content {
+        padding: 0 0.5rem;
+    }
+    
+    .kinematics-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .kinematics-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .kinematics-content section {
+        margin-bottom: 2rem;
+    }
+    
+    .MathJax {
+        font-size: 0.9em !important;
+    }
+    
+    /* На мобильных формулы не переносятся */
+    .MathJax, .MJXc-display {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+    }
+}
+
+/* Переопределение стилей MathJax по умолчанию */
+.mjx-chtml {
+    text-align: left !important;
+}
+
+.mjx-block {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Для формул с $$ */
+[class^="mjx-"] {
+    text-align: left !important;
+}
